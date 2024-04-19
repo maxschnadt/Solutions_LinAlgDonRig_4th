@@ -13,6 +13,9 @@
 \theoremstyle{remark}
 \newtheorem*{solution}{Solution}
 
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+
 %-----------------Grabkiste nach Beweisen-------%
 \renewcommand{\qedsymbol}{\(\hfill\blacksquare\)}
 %
@@ -72,7 +75,7 @@
 	
 	\vspace{2em}
 	\large
-	\textbf{This solutions manual was created by Maximilian Schnadt and fusor}
+	\textbf{This solution manual was created by the MathLearners study group.}
 	
 	\end{center}
 \end{titlepage}
@@ -90,9 +93,10 @@
 \setcounter{page}{5}
 \rhead{\thepage}
 \lhead{\firstleftmark}
+\sloppy
 
 \chapter{Vector Spaces}
-\section{\(\mathbb{R}^n\) and \(\mathbb{C}^n\)}
+\section{A: \(\mathbb{R}^n\) and \(\mathbb{C}^n\)}
 \begin{enumerate}
     \item[4]
 	Show that \(\lambda(\alpha + \beta) = \lambda\alpha + \lambda\beta\) for \(\lambda, \alpha, \beta \in \mathbb{C}\).
@@ -127,5 +131,41 @@
 	\begin{solution}
 		For \(\lambda\) to exist, it would have to satisfy \(2 \lambda = 12\) and \(5 \lambda = 7\) (real part of the first two coordinates). But in the first case we get \(\lambda = 6\), and in the second case we get \(\lambda = 1.4\). Thus \(\lambda\) can't exist.
 	\end{solution}
+\end{enumerate}
+\section{B: Definition of Vector Space}
+\begin{enumerate}
+	\item[1] Prove that \(-(-\mathbf{v}) = \mathbf{v}\).
+	\begin{proof}
+		We use direct proof. Thus let \(\mathbf{v} \in V\) and \(\mathbf{-v}\) be the additive inverse of \(\mathbf{v}\). Thus \(\mathbf{v}\) is the additive inverse of \(\mathbf{-v}\). Thus \(-(\mathbf{-v}) = \mathbf{v}\), which completes our proof.
+	\end{proof}
+	
+	\item[2] Suppose \(\alpha \in \mathbb{F}, \mathbf{v} \in V\) and \(\alpha \mathbf{v} = \mathbf{0}\). Prove that \(\alpha = 0\) or \(\mathbf{v} = \mathbf{0}\).
+	\begin{proof}
+		We will use proof by contradiction. Thus assume \(\alpha \mathbf{v} = \mathbf{0}\), \(\alpha \ne 0\) and \(\mathbf{v} \ne \mathbf{0}\). Since \(\alpha \ne 0\), we can multiply both sides of \(\alpha \mathbf{v} = \mathbf{0}\) by \(\frac{1}{\alpha}\). From this we get
+		\begin{equation*}
+		\begin{split}
+			\frac{\alpha}{\alpha} \mathbf{v} & = \frac{1}{\alpha} \mathbf{0} \\
+			1 \mathbf{v} & = \frac{1}{\alpha} 0\mathbf{v} \\
+			\mathbf{v} & = \frac{0}{\alpha} \mathbf{v} \\
+			& = 0 \mathbf{v} \\
+			& = \mathbf{0}.
+		\end{split}
+		\end{equation*}
+		But this contradicts \(\mathbf{v} \ne \mathbf{0}\), which completes our proof.
+	\end{proof}
+	
+	\item[4] The empty set is not a vector space. The empty set fails to satisfy only one of the requirements listend in the definition of a vector space. Which one?
+	\begin{solution}
+		Since the empty set \(\varnothing\) contains no elements, it fails the condition that \(0 \in \varnothing\).
+	\end{solution}
+	
+	\item[5] Show that in the definition of a vector space, the additive inverse condition can be replaced with the condition that \[0 \mathbf{v} = \mathbf{0}\] for all \(\mathbf{v} \in V\).
+	\begin{proof}
+		We will show that the definitions can be replaced by showing their equivalency. As we've seen in the chapter, the condition \(\mathbf{v} + \mathbf{0} = \mathbf{v}\) implies \(0 \mathbf{v} = \mathbf{0}\). 
+		
+		For the converse, suppose \(0 \mathbf{v} = \mathbf{0}\). Adding \(\mathbf{v}\) to both sides, we get \(0 \mathbf{v} + \mathbf{v} = 0 \mathbf{v} + 1 \mathbf{v} = \mathbf{0} + \mathbf{v}\), and so \((0 +1) \mathbf{v} = 1 \mathbf{v} = \mathbf{v} = \mathbf{0} + \mathbf{v}\), which completes our proof.
+	\end{proof}
+	
+	\item[7] Suppose \(\mathcal{S}\) is a nonempty set. Let \(V^{\mathcal{S}}\) denote the set of functions from \(\mathcal{S}\) to \(V\). Define a natural addition and scalar multiplication on \(V^{\mathcal{S}}\), and show that \(V^{\mathcal{S}}\) is a vector space with these definitions.
 \end{enumerate}
 \end{document}
